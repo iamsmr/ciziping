@@ -31,6 +31,7 @@ dependencies:
   provider: ^4.3.3
   shared_preferences: ^0.5.12+4
   flutter_svg: ^0.19.2+1
+  responsive_builder: ^0.3.0
 
 dev_dependencies:
   flutter_test:
