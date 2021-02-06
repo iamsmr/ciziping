@@ -1,7 +1,9 @@
-import 'package:ciziping/screens/landing/landing_details.dart';
+import 'package:ciziping/screens/landing/landing_details_desktop.dart';
+import 'package:ciziping/screens/landing/landing_details_mobile.dart';
 import 'package:ciziping/widgets/centered_view.dart/centered_view.dart';
-import 'package:ciziping/widgets/navigaton_bar.dart';
+import 'package:ciziping/widgets/navigation_bar/navigaton_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class Landing extends StatefulWidget {
   @override
@@ -21,7 +23,14 @@ class _LandingState extends State<Landing> {
           ),
           Divider(thickness: 1, color: Color(0xffEBEBEB)),
           SizedBox(height: 50),
-          LandingDetails()
+          Expanded(
+            child: CenteredView(
+              child: ScreenTypeLayout(
+                mobile: LandingDetailMobile(),
+                desktop: LandingDetailsDesktop(),
+              ),
+            ),
+          )
         ],
       ),
     );

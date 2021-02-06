@@ -1,4 +1,5 @@
 import 'package:ciziping/constant/color.dart';
+import 'package:ciziping/widgets/navigation_bar/navigation_bar_logo.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBar extends StatelessWidget {
@@ -8,39 +9,10 @@ class NavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     
       height: 100,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Logo(),
-          Row(children: items),
-        ],
-      ),
-    );
-  }
-}
-
-class Logo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: Row(
-        children: [
-          Icon(
-            Icons.check_circle,
-            size: 60,
-            color: ColorPalette.primaryColor,
-          ),
-          SizedBox(width: 10),
-          Text(
-            "Ciziping",
-            style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-            ),
-          )
-        ],
+        children: [Logo(), Row(children: items)],
       ),
     );
   }
