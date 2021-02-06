@@ -1,6 +1,7 @@
 
 import 'package:ciziping/models/Preferences.dart';
 import 'package:ciziping/screens/dashboard/dashboard.dart';
+import 'package:ciziping/screens/dashboard/inside_folder.dart';
 import 'package:ciziping/screens/landing/landing.dart';
 import 'package:ciziping/services/themeServices/theme.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
             theme: changeTheme.themeData,
             // home: Landing(),
             home: Dashboard(),
+            // home:InsideFolder(),
           );
         },
       ),

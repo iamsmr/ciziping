@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 
 class NavigationBar extends StatelessWidget {
   final List<NavItem> items;
+  final String path;
 
-  const NavigationBar({Key key, @required this.items}) : super(key: key);
+  const NavigationBar({Key key, @required this.items, this.path})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [Logo(), Row(children: items)],
+        children: [Logo(path: path), Row(children: items)],
       ),
     );
   }

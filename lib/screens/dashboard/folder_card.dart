@@ -1,4 +1,5 @@
 import 'package:ciziping/constant/color.dart';
+import 'package:ciziping/screens/dashboard/inside_folder.dart';
 import 'package:flutter/material.dart';
 
 class FolderCard extends StatelessWidget {
@@ -9,7 +10,12 @@ class FolderCard extends StatelessWidget {
       {"title": "Delete", "icon": Icons.delete}
     ];
     return InkWell(
-      onLongPress: () {},
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => InsideFolder(),
+        ),
+      ),
       child: Container(
         child: Column(
           children: [

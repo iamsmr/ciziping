@@ -2,6 +2,10 @@ import 'package:ciziping/constant/color.dart';
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
+  final String path;
+
+  const Logo({Key key, this.path}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,6 +22,14 @@ class Logo extends StatelessWidget {
             style: TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(width: 10),
+          Text(
+            path ?? '',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.grey[400],
             ),
           )
         ],

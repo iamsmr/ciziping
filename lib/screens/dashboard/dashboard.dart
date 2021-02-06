@@ -32,23 +32,23 @@ class Dashboard extends StatelessWidget {
           SizedBox(height: 50),
           Expanded(
             child: CenteredView(
-              child: GridView.count(
+              child: GridView.builder(
+                itemCount: 10,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: (size.width >= 1209)
+                      ? 4
+                      : (size.width >= 971)
+                          ? 3
+                          : (size.width <= 697)
+                              ? 1
+                              : 2,
+                  mainAxisSpacing: 30,
+                  crossAxisSpacing: 30,
+                ),
+                itemBuilder: (context, index) {
+                  return FolderCard();
+                },
                 shrinkWrap: true,
-                crossAxisCount: (size.width >= 1209)
-                    ? 4
-                    : (size.width >= 971)
-                        ? 3
-                        : (size.width <= 697)
-                            ? 1
-                            : 2,
-                mainAxisSpacing: 30,
-                crossAxisSpacing: 30,
-                children: [
-                  FolderCard(),
-                  FolderCard(),
-                  FolderCard(),
-                  FolderCard(),
-                ],
               ),
             ),
           ),
