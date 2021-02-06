@@ -8,6 +8,7 @@ class LandingContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 500,
       child: Column(
         crossAxisAlignment:
             mobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
@@ -22,7 +23,7 @@ class LandingContent extends StatelessWidget {
           SizedBox(height: 40),
           Text(
             "If you’re looking for a cross-platform"
-            "note-taking tool with just\nenough frills,"
+            "note-taking tool with just enough frills,"
             " it’s hard to look beyond Simplenote.",
             style: TextStyle(
               fontSize: 20,
