@@ -1,3 +1,4 @@
+import 'package:ciziping/constant/color.dart';
 import 'package:ciziping/widgets/centered_view.dart/centered_view.dart';
 import 'package:ciziping/widgets/navigaton_bar.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class _LandingState extends State<Landing> {
                     height: 350,
                   ),
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 100),
                 Expanded(
                   flex: 2,
                   child: Container(
@@ -59,6 +60,25 @@ class _LandingState extends State<Landing> {
                             fontSize: 20,
                             color: Colors.grey[700],
                             height: 1.7,
+                          ),
+                        ),
+                        SizedBox(height: 50),
+                        SizedBox(
+                          height: 60,
+                          width: 170,
+                          child: FlatButton(
+                            onPressed: () {},
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            color: ColorPalette.primaryColor,
+                            child: Text(
+                              "Get Started",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
                         )
                       ],
