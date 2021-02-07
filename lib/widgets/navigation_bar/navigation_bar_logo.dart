@@ -10,6 +10,7 @@ class Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.check_circle,

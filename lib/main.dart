@@ -1,5 +1,7 @@
 
 import 'package:ciziping/models/Preferences.dart';
+import 'package:ciziping/screens/auth/authentication.dart';
+import 'package:ciziping/screens/auth/login.dart';
 import 'package:ciziping/screens/dashboard/dashboard.dart';
 import 'package:ciziping/screens/dashboard/inside_folder.dart';
 import 'package:ciziping/screens/landing/landing.dart';
@@ -28,8 +30,10 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: changeTheme.themeData,
-            // home: Landing(),
-            home: Dashboard(),
+            home: Landing(),
+            // home: Dashboard(),
+            // home: Login(),
+            // home: Authentication(),
             // home:InsideFolder(),
           );
         },

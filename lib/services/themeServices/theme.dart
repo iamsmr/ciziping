@@ -15,8 +15,8 @@ class ChangeTheme extends ChangeNotifier {
   );
 
   final _lightTheme = ThemeData(
-    primarySwatch: Colors.grey,
-    primaryColor: Colors.white,
+    primarySwatch: Colors.red,
+    primaryColor: ColorPalette.primaryColor,
     brightness: Brightness.light,
     backgroundColor: ColorPalette.backgroundColorLight,
     accentColor: Colors.black,

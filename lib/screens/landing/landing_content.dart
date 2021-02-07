@@ -1,4 +1,5 @@
 import 'package:ciziping/constant/color.dart';
+import 'package:ciziping/screens/auth/authentication.dart';
 import 'package:flutter/material.dart';
 
 class LandingContent extends StatelessWidget {
@@ -36,7 +37,12 @@ class LandingContent extends StatelessWidget {
             height: 60,
             width: mobile ? 250 : 170,
             child: FlatButton(
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Authentication(),
+                ),
+              ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),

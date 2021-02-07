@@ -1,3 +1,4 @@
+import 'package:ciziping/screens/auth/authentication.dart';
 import 'package:ciziping/screens/landing/landing_details_desktop.dart';
 import 'package:ciziping/screens/landing/landing_details_mobile.dart';
 import 'package:ciziping/widgets/centered_view.dart/centered_view.dart';
@@ -18,7 +19,17 @@ class _LandingState extends State<Landing> {
         children: [
           CenteredView(
             child: NavigationBar(
-              items: [NavItem(title: "Login", onPressed: () {})],
+              items: [
+                NavItem(
+                  title: "Login",
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Authentication(),
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
           Divider(thickness: 1, color: Color(0xffEBEBEB)),
