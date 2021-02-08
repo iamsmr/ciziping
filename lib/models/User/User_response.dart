@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-UserResponse directoryFromJson(String str) =>
+UserResponse userResponseFromString(String str) =>
     UserResponse.fromJson(json.decode(str));
 
 class UserResponse {

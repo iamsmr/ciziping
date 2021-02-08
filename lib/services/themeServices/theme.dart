@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 class ChangeTheme extends ChangeNotifier {
   final _darkTheme = ThemeData(
     primarySwatch: Colors.grey,
-    primaryColor: Colors.black,
+    primaryColor: ColorPalette.primaryColor,
     brightness: Brightness.dark,
     backgroundColor: ColorPalette.backgroundColorDark,
     accentColor: Colors.white,
@@ -56,19 +56,3 @@ class ChangeTheme extends ChangeNotifier {
   }
 }
 
-// Consumer<ChangeTheme>(
-//             builder: (context, changeTheme, child) {
-//               bool isDark = changeTheme.isDark;
-//               return Switch(
-//                 value: isDark,
-//                 onChanged: (val) {
-//                   if (isDark) {
-//                     changeTheme.setLightMode();
-//                   } else {
-//                     changeTheme.setDarkMode();
-//                   }
-//                   // changeTheme.changeTheme(val);
-//                 },
-//               );
-//             },
-//           ),

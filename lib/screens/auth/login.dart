@@ -1,7 +1,9 @@
 import 'package:ciziping/constant/color.dart';
+import 'package:ciziping/services/auth_services/auth_service.dart';
 import 'package:ciziping/services/validator/auth_validator.dart';
 import 'package:ciziping/widgets/navigation_bar/navigation_bar_logo.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatelessWidget {
   final Function toggleScreen;
@@ -12,6 +14,7 @@ class Login extends StatelessWidget {
   Login({this.toggleScreen});
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthService>(context);
     return Scaffold(
       body: Center(
         child: Form(
@@ -39,7 +42,7 @@ class Login extends StatelessWidget {
                           vertical: 20,
                         ),
                         filled: true,
-                        fillColor: Colors.grey[200],
+                        // fillColor: Colors.grey[200],
                         hintText: "Email",
                         enabledBorder: InputBorder.none,
                       ),
@@ -59,7 +62,7 @@ class Login extends StatelessWidget {
                           vertical: 20,
                         ),
                         filled: true,
-                        fillColor: Colors.grey[200],
+                        // fillColor: Colors.grey[200],
                         hintText: "Password",
                         enabledBorder: InputBorder.none,
                       ),
@@ -69,8 +72,17 @@ class Login extends StatelessWidget {
                       height: 60,
                       width: double.infinity,
                       child: FlatButton(
-                        onPressed: () {
-                          if (_formKey.currentState.validate()) {}
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            await authService.login(
+                              email.text.trim(),
+                              password.text.trim(),
+                            );
+                          }
+                          if (authService.user != null &&
+                              authService.user.user.token != null) {
+                            Navigator.pop(context);
+                          }
                         },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -97,7 +109,25 @@ class Login extends StatelessWidget {
                           child: Text("Register"),
                         )
                       ],
-                    )
+                    ),
+                    SizedBox(height: 30),
+                    authService.error != null
+                        ? Container(
+                            padding: EdgeInsets.all(10),
+                            color: Colors.amberAccent,
+                            child: ListTile(
+                              leading: Icon(Icons.error, size: 40),
+                              title:
+                                  Text(authService.error.error.message ?? ""),
+                              trailing: IconButton(
+                                icon: Icon(Icons.close),
+                                onPressed: () {
+                                  authService.clearError();
+                                },
+                              ),
+                            ),
+                          )
+                        : Container()
                   ],
                 ),
               )

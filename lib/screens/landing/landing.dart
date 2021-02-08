@@ -6,14 +6,10 @@ import 'package:ciziping/widgets/navigation_bar/navigaton_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class Landing extends StatefulWidget {
-  @override
-  _LandingState createState() => _LandingState();
-}
-
-class _LandingState extends State<Landing> {
+class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: Column(
         children: [
@@ -24,15 +20,16 @@ class _LandingState extends State<Landing> {
                   title: "Login",
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => Authentication(),
-                    ),
+                    MaterialPageRoute(builder: (context) => Authentication()),
                   ),
                 )
               ],
             ),
           ),
-          Divider(thickness: 1, color: Color(0xffEBEBEB)),
+          Divider(
+            thickness: 1,
+            color: isDark ? Colors.grey[700] : Color(0xffEBEBEB),
+          ),
           SizedBox(height: 50),
           Expanded(
             child: CenteredView(
